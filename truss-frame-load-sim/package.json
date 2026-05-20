@@ -1,0 +1,21 @@
+{
+  "name": "truss-frame-load-sim",
+  "version": "1.0.0",
+  "description": "桁架结构承重受力演示 - 基础结构力学入门",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "gulp dev",
+    "build": "gulp build"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "del": "^6.1.1",
+    "detect-port": "^1.5.1"
+  }
+}
