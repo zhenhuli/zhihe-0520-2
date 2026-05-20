@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密闭空间气体扩散模拟</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>密闭空间气体扩散模拟系统</h1>
+            <p class="subtitle">Gas Diffusion Simulation in Confined Space</p>
+        </header>
+
+        <div class="main-content">
+            <div class="simulation-area">
+                <canvas id="simulationCanvas"></canvas>
+                <div class="canvas-overlay">
+                    <div class="stat-item">
+                        <span class="stat-label">平均浓度:</span>
+                        <span id="avgConcentration">0.00%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">最高浓度:</span>
+                        <span id="maxConcentration">0.00%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">运行时间:</span>
+                        <span id="runTime">0s</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <div class="control-group">
+                    <h3>气体释放源</h3>
+                    <div class="control-row">
+                        <label for="releaseX">释放点 X:</label>
+                        <input type="range" id="releaseX" min="0" max="100" value="20">
+                        <span id="releaseXVal">20%</span>
+                    </div>
+                    <div class="control-row">
+                        <label for="releaseY">释放点 Y:</label>
+                        <input type="range" id="releaseY" min="0" max="100" value="50">
+                        <span id="releaseYVal">50%</span>
+                    </div>
+                    <div class="control-row">
+                        <label for="releaseRate">释放速率:</label>
+                        <input type="range" id="releaseRate" min="1" max="100" value="30">
+                        <span id="releaseRateVal">30</span>
+                    </div>
+                    <button id="setReleasePoint" class="btn btn-primary">设置释放点</button>
+                </div>
+
+                <div class="control-group">
+                    <h3>环境参数</h3>
+                    <div class="control-row">
+                        <label for="temperature">温度 (°C):</label>
+                        <input type="range" id="temperature" min="-20" max="80" value="25">
+                        <span id="temperatureVal">25°C</span>
+                    </div>
+                    <div class="control-row">
+                        <label for="sealing">密闭程度:</label>
+                        <input type="range" id="sealing" min="0" max="100" value="80">
+                        <span id="sealingVal">80%</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>通风控制</h3>
+                    <div class="control-row">
+                        <label for="ventSize">通风口大小:</label>
+                        <input type="range" id="ventSize" min="0" max="100" value="0">
+                        <span id="ventSizeVal">0%</span>
+                    </div>
+                    <div class="control-row">
+                        <label for="ventX">通风口 X:</label>
+                        <input type="range" id="ventX" min="0" max="100" value="80">
+                        <span id="ventXVal">80%</span>
+                    </div>
+                    <div class="control-row">
+                        <label for="ventY">通风口 Y:</label>
+                        <input type="range" id="ventY" min="0" max="100" value="50">
+                        <span id="ventYVal">50%</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>模拟控制</h3>
+                    <div class="button-row">
+                        <button id="startBtn" class="btn btn-success">开始</button>
+                        <button id="pauseBtn" class="btn btn-warning">暂停</button>
+                        <button id="resetBtn" class="btn btn-danger">重置</button>
+                    </div>
+                    <div class="control-row">
+                        <label for="simSpeed">模拟速度:</label>
+                        <input type="range" id="simSpeed" min="1" max="10" value="3">
+                        <span id="simSpeedVal">3x</span>
+                    </div>
+                </div>
+
+                <div class="control-group legend-group">
+                    <h3>浓度图例</h3>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: rgba(0, 255, 0, 0.3)"></div>
+                            <span>低 (0-20%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: rgba(255, 255, 0, 0.5)"></div>
+                            <span>中 (20-50%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: rgba(255, 165, 0, 0.7)"></div>
+                            <span>高 (50-80%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: rgba(255, 0, 0, 0.9)"></div>
+                            <span>极高 (80-100%)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

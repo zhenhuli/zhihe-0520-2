@@ -1,0 +1,18 @@
+{
+  "name": "gas-diffusion-sim",
+  "version": "1.0.0",
+  "description": "密闭空间气体扩散模拟系统",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "gas",
+    "diffusion",
+    "simulation",
+    "canvas",
+    "webworker"
+  ],
+  "author": "",
+  "license": "MIT"
+}
