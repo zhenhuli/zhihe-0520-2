@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f5f7fa;
+  color: #303133;
+}
+
+#app {
+  min-height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c4cc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #909399;
+}
+
+.el-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
+}
+
+.el-card__header {
+  border-bottom: 1px solid #ebeef5;
+  padding: 16px 20px;
+}
+
+.el-divider {
+  margin: 16px 0;
+}
+
+.el-divider__text {
+  background-color: #fff;
+  color: #606266;
+  font-weight: 500;
+}
+
+.el-form-item {
+  margin-bottom: 18px;
+}
+
+.el-descriptions-item__label {
+  color: #606266;
+}
+
+.el-descriptions-item__content {
+  color: #303133;
+}
